@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = FlashGordon::VERSION
   s.authors     = ["Ernest Sim"]
   s.email       = ["ernest@methodnow.com"]
-  s.homepage    = "http://www.methodnow.com"
+  s.homepage    = "https://github.com/methodnow/flash_gordon"
   s.summary     = "Flash Gordon aims to simplify managing complex flash messages"
   s.description = "Flash Gordon is a gem written to simplify flash notification calls from anywhere in your application, need a flash message appended during a controller action? model method? or view? The syntax and usage is consistent and simple. Take a spin :)"
 

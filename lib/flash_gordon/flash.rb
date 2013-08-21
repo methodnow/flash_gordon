@@ -3,7 +3,7 @@ module FlashGordon
     # Messages fall under different message zones, for now zones are hardcoded
     # eventually we can add custom ones via initializers
 
-    @messages = {:error => [], :alert => [], :info => [], :log => [], :success => [], :warning => [], :danger => []}
+    @messages = FlashGordon.zones
 
     def self.append(message,zone=:warning, options={})
       # Added options for future use
@@ -16,11 +16,12 @@ module FlashGordon
           @messages[zone] << message
         end
       else
-        raise "Zone does not exist, please use the following zones - :error, :info, :log, :success, :warning, :alert"
+        raise "Zone does not exist, please use the following zones - #{@messages.map{|k| ":#{k[0]}"}.join(", ") } or add it to the initializer."
       end
     end
 
-    def self.render(zone=:all, glue="\n")
+    def self.render(zone=:all, glue="<br/>")
+      @messages
       if zone == :all
         @messages.each_pair do |k,v|
           @messages[k] = v.join(glue) unless v.empty?
@@ -32,7 +33,7 @@ module FlashGordon
     end
 
     def self.reset
-      @messages = {:error => [], :alert => [], :info => [], :log => [], :success => [], :warning => [], :danger => []}
+      @messages = FlashGordon.reset_zones
     end
   end
 end

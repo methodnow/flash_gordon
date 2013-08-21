@@ -24,9 +24,7 @@ To add a custom flash event user the append method, the default zone will be :al
 ```
 
 ### Specifying a Flash zone
-You can specify a zone in the method, right now zones are hardcoded to the follow.
-This is purely for bootstrap elements to render the correct colored alert div's
-
+You can specify a zone in append method. The default zones are similar to bootstrap alerts classes, which are :warning, :success, :info, :danger. The rails default :error is included by default also.
 ```ruby
   # Available Zones are :warning, :alert, :log, :success, :info, :error, :danger
   FlashGordon::Flash.append("Success Message", :success)

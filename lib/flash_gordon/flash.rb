@@ -21,7 +21,6 @@ module FlashGordon
     end
 
     def self.render(zone=:all, glue="<br/>")
-      @messages
       if zone == :all
         @messages.each_pair do |k,v|
           @messages[k] = v.join(glue) unless v.empty?

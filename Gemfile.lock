@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    flash_gordon (0.0.1)
-      rails (~> 4.0.0)
+    flash_gordon (0.0.4)
+      rails (>= 3.2)
 
 GEM
   remote: https://rubygems.org/

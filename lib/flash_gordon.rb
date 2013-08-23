@@ -1,20 +1,14 @@
 module FlashGordon
   mattr_accessor :zones
-  mattr_reader :default_zones
   @@zones = {}
 
   def self.setup
     yield self
   end
 
-  def self.set_default_zones
-    @@default_zones = Hash[@@zones]
-  end
-
   def self.init_zone
     zone_list = "warning danger info success error"
     zone_list.split(" ").each{|z| @@zones[z.to_sym] = []}
-    self.set_default_zones
     true
   end
 
